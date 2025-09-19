@@ -1,42 +1,38 @@
-<h2><a href="https://leetcode.com/problems/push-dominoes">Push Dominoes</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>There are <code>n</code> dominoes in a line, and we place each domino vertically upright. In the beginning, we simultaneously push some of the dominoes either to the left or to the right.</p>
+# Dominoes Simulator
 
-<p>After each second, each domino that is falling to the left pushes the adjacent domino on the left. Similarly, the dominoes falling to the right push their adjacent dominoes standing on the right.</p>
+## Açıklama
+Bu proje, dikey domino taşlarının fiziksel etkileşimlerini simüle eder. Başlangıçta bazı domino taşları sağa (`R`) veya sola (`L`) itilmiştir, diğerleri dikey durumdadır (`.`). Bu simülasyon, her domino taşının düşme yönünü ve etkileşimlerini kurallara göre hesaplar.
 
-<p>When a vertical domino has dominoes falling on it from both sides, it stays still due to the balance of the forces.</p>
+### Kurallar
+- `L` : Sola devrilen domino, bitişik solundaki dominoyu iter.  
+- `R` : Sağa devrilen domino, bitişik sağındaki dominoyu iter.  
+- `.` : Duran domino.  
+- Eğer bir domino aynı anda iki taraftan kuvvet görürse, dengelenir ve dik kalır.  
+- Düşen bir domino, zaten devrilmiş veya devrilecek bir dominoya tekrar kuvvet uygulamaz.
 
-<p>For the purposes of this question, we will consider that a falling domino expends no additional force to a falling or already fallen domino.</p>
+## Örnek Kullanım
 
-<p>You are given a string <code>dominoes</code> representing the initial state where:</p>
+**Girdi:**  
+dominoes = ".LR..LR..L.."
 
-<ul>
-	<li><code>dominoes[i] = &#39;L&#39;</code>, if the <code>i<sup>th</sup></code> domino has been pushed to the left,</li>
-	<li><code>dominoes[i] = &#39;R&#39;</code>, if the <code>i<sup>th</sup></code> domino has been pushed to the right, and</li>
-	<li><code>dominoes[i] = &#39;.&#39;</code>, if the <code>i<sup>th</sup></code> domino has not been pushed.</li>
-</ul>
+**Çıktı:**  
+"LL.RR.LLRRLL.."
 
-<p>Return <em>a string representing the final state</em>.</p>
+markdown
+Kodu kopyala
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+## Kullanım Adımları
+1. Başlangıç domino dizisini sağlayın.  
+2. Fonksiyon domino dizisinin son durumunu döndürür.  
+3. Sonuç, tüm domino taşlarının hangi yöne devrildiğini gösterir.
 
-<pre>
-<strong>Input:</strong> dominoes = &quot;RR.L&quot;
-<strong>Output:</strong> &quot;RR.L&quot;
-<strong>Explanation:</strong> The first domino expends no additional force on the second domino.
-</pre>
+## Kullanılan Dil
+JavaScript
 
-<p><strong class="example">Example 2:</strong></p>
-<img alt="" src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/05/18/domino.png" style="height: 196px; width: 512px;" />
-<pre>
-<strong>Input:</strong> dominoes = &quot;.L.R...LR..L..&quot;
-<strong>Output:</strong> &quot;LL.RR.LLRRLL..&quot;
-</pre>
+## Özellikler
+- Büyük domino dizilerini bile etkin bir şekilde işleyebilir (n ≤ 10^5).  
+- Fiziksel domino etkilerini gerçekçi bir şekilde simüle eder.  
+- Basit ve anlaşılır çıktı ile görselleştirme kolaydır.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>n == dominoes.length</code></li>
-	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
-	<li><code>dominoes[i]</code> is either <code>&#39;L&#39;</code>, <code>&#39;R&#39;</code>, or <code>&#39;.&#39;</code>.</li>
-</ul>
+## Teşekkür
+Bu proje, algoritma ve problem çözme becerilerini geliştirmek isteyenler için hazırlandı. Katkı ve destek veren herkes
