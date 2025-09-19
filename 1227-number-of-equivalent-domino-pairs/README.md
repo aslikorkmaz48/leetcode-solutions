@@ -1,27 +1,26 @@
-<h2><a href="https://leetcode.com/problems/number-of-equivalent-domino-pairs">Number of Equivalent Domino Pairs</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given a list of <code>dominoes</code>, <code>dominoes[i] = [a, b]</code> is <strong>equivalent to</strong> <code>dominoes[j] = [c, d]</code> if and only if either (<code>a == c</code> and <code>b == d</code>), or (<code>a == d</code> and <code>b == c</code>) - that is, one domino can be rotated to be equal to another domino.</p>
+Domino Çiftleri Sayacı
 
-<p>Return <em>the number of pairs </em><code>(i, j)</code><em> for which </em><code>0 &lt;= i &lt; j &lt; dominoes.length</code><em>, and </em><code>dominoes[i]</code><em> is <strong>equivalent to</strong> </em><code>dominoes[j]</code>.</p>
+Bu proje , belirli bir domino listesindeki eşdeğer domino çiftlerinin sayısını saymak için bir Python çözümü içerir. İki domino [a, b]ve , ...[c, d]a == cb == d a == db == c
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Sorun Açıklaması
+Tam sayı çiftleri olarak temsil edilen bir domino listesi verildiğinde, ve'nin 'ye eşit olduğu (i, j)çift sayısını döndürün .0 <= i < j < dominoes.lengthdominoes[i]dominoes[j]
 
-<pre>
-<strong>Input:</strong> dominoes = [[1,2],[2,1],[3,4],[5,6]]
-<strong>Output:</strong> 1
-</pre>
+Örnek 1:
+Input: dominoes = [[1,2],[2,1],[3,4],[5,6]]
+Output: 1
+Örnek 2:
+Input: dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]
+Output: 3
 
-<p><strong class="example">Example 2:</strong></p>
+Çözüm Yaklaşımı
+Her domino için [a, b]çiftleri, [1,2]ve [2,1]aynı kabul edilecek şekilde sıralayın.
+CounterHer bir domino taşının kaç kez göründüğünü takip etmek için a kullanın .
+Her domino için, sıralanmış çiftinin geçerli sayısını sonuca ekleyin (çünkü önceki tüm oluşumlar geçerli çiftler oluşturur).
+Bu dominonun sayısını artırın Counter.
+Bu yaklaşım O(n) karmaşıklığı garanti eder ve büyük girdiler için verimlidir.
 
-<pre>
-<strong>Input:</strong> dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]
-<strong>Output:</strong> 3
-</pre>
+Dil
+Python 3
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= dominoes.length &lt;= 4 * 10<sup>4</sup></code></li>
-	<li><code>dominoes[i].length == 2</code></li>
-	<li><code>1 &lt;= dominoes[i][j] &lt;= 9</code></li>
-</ul>
+Teşekkürler
+Bu projeyi incelediğiniz için teşekkürler! Katkı ve önerilerinizi bekliyorum.
