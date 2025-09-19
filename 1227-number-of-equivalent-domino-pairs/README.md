@@ -1,26 +1,24 @@
-Domino Çiftleri Sayacı
+# Domino Çiftlerini Sayma
+Bu proje, verilen bir domino listesindeki eşdeğer domino çiftlerini saymak için bir Python çözümü sunmaktadır. İki domino `[a, b]` ve `[c, d]` eşdeğer kabul edilir **eğer** `a == c` ve `b == d` **veya** `a == d` ve `b == c` ise.
 
-Bu proje , belirli bir domino listesindeki eşdeğer domino çiftlerinin sayısını saymak için bir Python çözümü içerir. İki domino [a, b]ve , ...[c, d]a == cb == d a == db == c
+## Problem Tanımı
+Verilen bir domino listesindeki `(i, j)` çiftlerinin sayısını döndürün; burada `0 <= i < j < dominoes.length` ve `dominoes[i]` dominoes[j] ile eşdeğerdir.
 
-Sorun Açıklaması
-Tam sayı çiftleri olarak temsil edilen bir domino listesi verildiğinde, ve'nin 'ye eşit olduğu (i, j)çift sayısını döndürün .0 <= i < j < dominoes.lengthdominoes[i]dominoes[j]
+### Örnek 1:
+Girdi: dominoes = [[1,2],[2,1],[3,4],[5,6]]
+]()Çıktı: 1
 
-Örnek 1:
-Input: dominoes = [[1,2],[2,1],[3,4],[5,6]]
-Output: 1
-Örnek 2:
-Input: dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]
-Output: 3
+### Örnek 2:
+Girdi: dominoes = [[1,2],[1,2],[1,1],[1,2],[2,2]]
 
-Çözüm Yaklaşımı
-Her domino için [a, b]çiftleri, [1,2]ve [2,1]aynı kabul edilecek şekilde sıralayın.
-CounterHer bir domino taşının kaç kez göründüğünü takip etmek için a kullanın .
-Her domino için, sıralanmış çiftinin geçerli sayısını sonuca ekleyin (çünkü önceki tüm oluşumlar geçerli çiftler oluşturur).
-Bu dominonun sayısını artırın Counter.
-Bu yaklaşım O(n) karmaşıklığı garanti eder ve büyük girdiler için verimlidir.
+## Çözüm Yaklaşımı
+- Her domino `[a, b]` için, çiftleri sıralayın böylece `[1,2]` ve `[2,1]` aynı şekilde işlenir.
+- Her eşsiz domino için kaç kez tekrarlandığını takip etmek üzere bir `Counter` (sayıcı) kullanın.
+- Her domino için, sıralanmış çiftinin mevcut sayısını sonuca ekleyin (çünkü önceki tüm tekrarlar geçerli çiftler oluşturur).
+- Bu yaklaşım **O(n)** karmaşıklığı sağlar ve büyük girdiler için verimli çalışır.
 
-Dil
+## Kullanılan Dil
 Python 3
 
-Teşekkürler
-Bu projeyi incelediğiniz için teşekkürler! Katkı ve önerilerinizi bekliyorum.
+## Teşekkür
+Projeyi incelediğiniz için teşekkürler! Katkıları, önerileri ve geri bildirimleri memnuniyetle karşılarım.
