@@ -1,43 +1,50 @@
-<h2><a href="https://leetcode.com/problems/minimum-cost-to-make-array-equal">Minimum Cost to Make Array Equal</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given two <strong>0-indexed</strong> arrays <code>nums</code> and <code>cost</code> consisting each of <code>n</code> <strong>positive</strong> integers.</p>
+# [Minimum Cost to Make Array Equal](https://leetcode.com/problems/minimum-cost-to-make-array-equal/)  
 
-<p>You can do the following operation <strong>any</strong> number of times:</p>
+## Dil
 
-<ul>
-	<li>Increase or decrease <strong>any</strong> element of the array <code>nums</code> by <code>1</code>.</li>
-</ul>
+**JavaScript**
 
-<p>The cost of doing one operation on the <code>i<sup>th</sup></code> element is <code>cost[i]</code>.</p>
+---
 
-<p>Return <em>the <strong>minimum</strong> total cost such that all the elements of the array </em><code>nums</code><em> become <strong>equal</strong></em>.</p>
+## Problem
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Verilen iki dizi:  
 
-<pre>
-<strong>Input:</strong> nums = [1,3,5,2], cost = [2,3,1,14]
-<strong>Output:</strong> 8
-<strong>Explanation:</strong> We can make all the elements equal to 2 in the following way:
-- Increase the 0<sup>th</sup> element one time. The cost is 2.
-- Decrease the 1<sup><span style="font-size: 10.8333px;">st</span></sup> element one time. The cost is 3.
-- Decrease the 2<sup>nd</sup> element three times. The cost is 1 + 1 + 1 = 3.
-The total cost is 2 + 3 + 3 = 8.
-It can be shown that we cannot make the array equal with a smaller cost.
-</pre>
+- `nums` → her elemanın değeri  
+- `cost` → her elemanın değişim maliyeti  
 
-<p><strong class="example">Example 2:</strong></p>
+Amaç: **Tüm `nums` elemanlarını eşitlemek için gereken minimum toplam maliyeti** bulun.  
 
-<pre>
-<strong>Input:</strong> nums = [2,2,2,2,2], cost = [4,2,8,1,3]
-<strong>Output:</strong> 0
-<strong>Explanation:</strong> All the elements are already equal, so no operations are needed.
-</pre>
+**Kurallar:**  
+- Bir elemanı `x` kadar değiştirmek için maliyet: `cost[i] * |nums[i] - x|`  
+- Hedef değer, maliyeti minimum yapan herhangi bir tamsayı olabilir  
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+---
 
-<ul>
-	<li><code>n == nums.length == cost.length</code></li>
-	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
-	<li><code>1 &lt;= nums[i], cost[i] &lt;= 10<sup>6</sup></code></li>
-	<li>Test cases are generated in a way that the output doesn&#39;t exceed&nbsp;2<sup>53</sup>-1</li>
-</ul>
+### Örnek
+
+**Input:** `nums = [1,3,5,2], cost = [2,3,1,14]`  
+**Output:** `8`  
+
+Açıklama: Tüm sayıları `2` veya `3` gibi ağırlıklı median üzerinden eşitlemek minimum maliyeti verir.
+
+---
+
+## Çözüm Mantığı
+
+- `nums` ve `cost` çiftlerini birleştirip `nums` değerine göre sırala  
+- Toplam ağırlıklı medianı (cost ile ağırlıklı orta değer) bul  
+- Her elemanı median değerine getirmenin maliyeti hesaplanır  
+- Bu yöntem, minimum toplam maliyeti sağlar  
+
+---
+
+## Kullanım
+let nums = [1,3,5,2];
+let cost = [2,3,1,14];
+console.log(minCost(nums, cost)); 
+// Output: 8
+
+---
+🙏 Eğer bu proje işine yaradıysa yıldız bırakmayı unutma! ⭐
+Katkı ve geri bildirimler için açığım.
