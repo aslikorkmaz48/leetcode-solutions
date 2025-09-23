@@ -1,48 +1,45 @@
-<h2><a href="https://leetcode.com/problems/determine-if-two-events-have-conflict">Determine if Two Events Have Conflict</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>You are given two arrays of strings that represent two inclusive events that happened <strong>on the same day</strong>, <code>event1</code> and <code>event2</code>, where:</p>
+# [Checking Existence of Time Interval Overlap](https://leetcode.com/problems/checking-existence-of-time-interval-overlap/)  
 
-<ul>
-	<li><code>event1 = [startTime<sub>1</sub>, endTime<sub>1</sub>]</code> and</li>
-	<li><code>event2 = [startTime<sub>2</sub>, endTime<sub>2</sub>]</code>.</li>
-</ul>
+## Dil
 
-<p>Event times are valid 24 hours format in the form of <code>HH:MM</code>.</p>
+**JavaScript**
 
-<p>A <strong>conflict</strong> happens when two events have some non-empty intersection (i.e., some moment is common to both events).</p>
+---
 
-<p>Return <code>true</code><em> if there is a conflict between two events. Otherwise, return </em><code>false</code>.</p>
+## Problem
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Verilen iki etkinlik dizisi `event1` ve `event2`, her biri `[startTime, endTime]` formatında zamanları içeriyor.  
+Amaç: **Bu iki etkinliğin zamanlarının çakışıp çakışmadığını** belirlemek.  
 
-<pre>
-<strong>Input:</strong> event1 = [&quot;01:15&quot;,&quot;02:00&quot;], event2 = [&quot;02:00&quot;,&quot;03:00&quot;]
-<strong>Output:</strong> true
-<strong>Explanation:</strong> The two events intersect at time 2:00.
-</pre>
+**Kurallar:**  
+- Zamanlar `"HH:MM"` formatında verilir  
+- Etkinlikler sadece bu zaman aralıkları boyunca gerçekleşir  
+- Çakışma, iki etkinliğin herhangi bir zamanının kesişmesi durumunda geçerlidir  
 
-<p><strong class="example">Example 2:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> event1 = [&quot;01:00&quot;,&quot;02:00&quot;], event2 = [&quot;01:20&quot;,&quot;03:00&quot;]
-<strong>Output:</strong> true
-<strong>Explanation:</strong> The two events intersect starting from 01:20 to 02:00.
-</pre>
+### Örnek
 
-<p><strong class="example">Example 3:</strong></p>
+**Input:** `event1 = ["01:15","02:00"], event2 = ["02:00","03:00"]`  
+**Output:** `true`  
 
-<pre>
-<strong>Input:</strong> event1 = [&quot;10:00&quot;,&quot;11:00&quot;], event2 = [&quot;14:00&quot;,&quot;15:00&quot;]
-<strong>Output:</strong> false
-<strong>Explanation:</strong> The two events do not intersect.
-</pre>
+Açıklama: İki etkinlik 02:00 zamanında kesişiyor.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+---
 
-<ul>
-	<li><code>event1.length == event2.length == 2</code></li>
-	<li><code>event1[i].length == event2[i].length == 5</code></li>
-	<li><code>startTime<sub>1</sub> &lt;= endTime<sub>1</sub></code></li>
-	<li><code>startTime<sub>2</sub> &lt;= endTime<sub>2</sub></code></li>
-	<li>All the event times follow the <code>HH:MM</code> format.</li>
-</ul>
+## Çözüm Mantığı
+
+- Zamanları string olarak karşılaştırmak yeterlidir (`"HH:MM"` formatı sözlük sıralamasıyla uyumludur)  
+- Çakışma yoktur durumu: `event1` tamamen `event2` öncesinde veya `event2` tamamen `event1` öncesindedir  
+- Bunun dışındaki tüm durumlar çakışmayı gösterir  
+
+---
+
+## Kullanım
+let event1 = ["01:15","02:00"];
+let event2 = ["02:00","03:00"];
+console.log(haveConflict(event1, event2)); 
+// Output: true
+---
+🙏 Eğer bu proje işine yaradıysa yıldız bırakmayı unutma! ⭐
+Katkı ve geri bildirimler için açığım.
