@@ -1,32 +1,48 @@
-<h2><a href="https://leetcode.com/problems/sort-colors">Sort Colors</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given an array <code>nums</code> with <code>n</code> objects colored red, white, or blue, sort them <strong><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> </strong>so that objects of the same color are adjacent, with the colors in the order red, white, and blue.</p>
+# [Sort Colors (Dutch National Flag Problem)](https://leetcode.com/problems/sort-colors/)  
 
-<p>We will use the integers <code>0</code>, <code>1</code>, and <code>2</code> to represent the color red, white, and blue, respectively.</p>
+## Dil
 
-<p>You must solve this problem without using the library&#39;s sort function.</p>
+**C++**
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [2,0,2,1,1,0]
-<strong>Output:</strong> [0,0,1,1,2,2]
-</pre>
+## Problem
 
-<p><strong class="example">Example 2:</strong></p>
+Verilen bir `nums` dizisi yalnızca 0, 1 ve 2 değerlerinden oluşur. Diziyi **renk sırasına göre** (0, 1, 2) **yerinde** sıralayın.  
 
-<pre>
-<strong>Input:</strong> nums = [2,0,1]
-<strong>Output:</strong> [0,1,2]
-</pre>
+**Kurallar:**  
+- Diziyi ekstra alan kullanmadan (in-place) sırala  
+- 0 → kırmızı, 1 → beyaz, 2 → mavi olarak düşün  
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+---
 
-<ul>
-	<li><code>n == nums.length</code></li>
-	<li><code>1 &lt;= n &lt;= 300</code></li>
-	<li><code>nums[i]</code> is either <code>0</code>, <code>1</code>, or <code>2</code>.</li>
-</ul>
+### Örnek
 
-<p>&nbsp;</p>
-<p><strong>Follow up:</strong>&nbsp;Could you come up with a one-pass algorithm using only&nbsp;constant extra space?</p>
+**Input:** `nums = [2,0,2,1,1,0]`  
+**Output:** `[0,0,1,1,2,2]`  
+
+Açıklama: Tüm elemanlar sıralandı, ekstra dizi kullanılmadı.
+
+---
+
+## Çözüm Mantığı
+
+- Üçlü gösterge (low, mid, high) kullan  
+- `nums[mid] == 0` → low ile takas et, low ve mid artır  
+- `nums[mid] == 1` → mid artır  
+- `nums[mid] == 2` → high ile takas et, high azalt  
+- Döngü bitene kadar işlemi tekrarla (Dutch National Flag algoritması)  
+
+---
+
+## Kullanım
+
+vector<int> nums = {2,0,2,1,1,0};
+Solution s;
+s.sortColors(nums);
+// Output: [0,0,1,1,2,2]
+
+---
+
+🙏 Eğer bu proje işine yaradıysa yıldız bırakmayı unutma! ⭐
+Katkı ve geri bildirimler için açığım.
