@@ -1,37 +1,44 @@
-<h2><a href="https://leetcode.com/problems/count-subarrays-with-fixed-bounds">Count Subarrays With Fixed Bounds</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given an integer array <code>nums</code> and two integers <code>minK</code> and <code>maxK</code>.</p>
+# [Count Subarrays With Fixed Bounds](https://leetcode.com/problems/count-subarrays-with-fixed-bounds/)  
 
-<p>A <strong>fixed-bound subarray</strong> of <code>nums</code> is a subarray that satisfies the following conditions:</p>
+## Dil
+**Java**
 
-<ul>
-	<li>The <strong>minimum</strong> value in the subarray is equal to <code>minK</code>.</li>
-	<li>The <strong>maximum</strong> value in the subarray is equal to <code>maxK</code>.</li>
-</ul>
+---
 
-<p>Return <em>the <strong>number</strong> of fixed-bound subarrays</em>.</p>
+## Problem
 
-<p>A <strong>subarray</strong> is a <strong>contiguous</strong> part of an array.</p>
+Verilen bir tamsayı dizisi `nums` ve iki sabit `minK` ve `maxK` ile, her alt dizide **minK ve maxK değerlerini kapsayan** alt dizilerin sayısını bulun.  
+**Kurallar:**  
+- Alt diziler ardışık elemanlardan oluşur  
+- Alt dizide `minK` ve `maxK` mutlaka bulunmalıdır  
+- Alt dizideki tüm elemanlar `minK` ve `maxK` sınırları arasında olmalıdır  
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [1,3,5,2,7,5], minK = 1, maxK = 5
-<strong>Output:</strong> 2
-<strong>Explanation:</strong> The fixed-bound subarrays are [1,3,5] and [1,3,5,2].
-</pre>
+### Örnek
 
-<p><strong class="example">Example 2:</strong></p>
+**Input:** `nums = [1,3,5,2,7,5], minK = 1, maxK = 5`  
+**Output:** `2`  
 
-<pre>
-<strong>Input:</strong> nums = [1,1,1,1], minK = 1, maxK = 1
-<strong>Output:</strong> 10
-<strong>Explanation:</strong> Every subarray of nums is a fixed-bound subarray. There are 10 possible subarrays.
-</pre>
+Açıklama: Geçerli alt diziler `[1,3,5]` ve `[5,2,7,5]` gibi `minK` ve `maxK` içerir ve sınırlar içindedir.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+---
 
-<ul>
-	<li><code>2 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>1 &lt;= nums[i], minK, maxK &lt;= 10<sup>6</sup></code></li>
-</ul>
+## Çözüm Mantığı
+- Tek geçişli bir pencere yöntemi ile çözülür  
+- `leftBound` → en son geçersiz elemanın indeksi  
+- `lastMin` → en son `minK` görülen indeks  
+- `lastMax` → en son `maxK` görülen indeks  
+- Her adımda hem `minK` hem `maxK` görülmüşse katkı eklenir  
+
+---
+
+## Kullanım
+int[] nums = {1,3,5,2,7,5};
+int minK = 1;
+int maxK = 5;
+Solution s = new Solution();
+long result = s.countSubarrays(nums, minK, maxK);
+// Output: 2
+                                         🙏 Eğer bu proje işine yaradıysa yıldız bırakmayı unutma! ⭐
+Katkı ve geri bildirimler için açığım.
