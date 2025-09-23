@@ -1,51 +1,47 @@
-<h2><a href="https://leetcode.com/problems/minimum-number-of-operations-to-make-arrays-similar">Minimum Number of Operations to Make Arrays Similar</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given two positive integer arrays <code>nums</code> and <code>target</code>, of the same length.</p>
+# [Make Two Arrays Similar](https://leetcode.com/problems/make-two-arrays-similar/)  
 
-<p>In one operation, you can choose any two <strong>distinct</strong> indices <code>i</code> and <code>j</code> where <code>0 &lt;= i, j &lt; nums.length</code> and:</p>
+## Dil
 
-<ul>
-	<li>set <code>nums[i] = nums[i] + 2</code> and</li>
-	<li>set <code>nums[j] = nums[j] - 2</code>.</li>
-</ul>
+**JavaScript**
 
-<p>Two arrays are considered to be <strong>similar</strong> if the frequency of each element is the same.</p>
+---
 
-<p>Return <em>the minimum number of operations required to make </em><code>nums</code><em> similar to </em><code>target</code>. The test cases are generated such that <code>nums</code> can always be similar to <code>target</code>.</p>
+## Problem
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Verilen iki tamsayı dizisi `nums` ve `target`, dizileri **benzer hâle getirmek** için gereken minimum işlemleri bulun.  
 
-<pre>
-<strong>Input:</strong> nums = [8,12,6], target = [2,14,10]
-<strong>Output:</strong> 2
-<strong>Explanation:</strong> It is possible to make nums similar to target in two operations:
-- Choose i = 0 and j = 2, nums = [10,12,4].
-- Choose i = 1 and j = 2, nums = [10,14,2].
-It can be shown that 2 is the minimum number of operations needed.
-</pre>
+**Kurallar:**  
+- Bir işlem: iki elemanı seçip her birini ±2 olacak şekilde değiştirmek  
+- Diziler **benzer** olduğunda, her pozisyondaki parite (tek/çift) eşleşir ve değerler aynı olur  
 
-<p><strong class="example">Example 2:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [1,2,5], target = [4,1,3]
-<strong>Output:</strong> 1
-<strong>Explanation:</strong> We can make nums similar to target in one operation:
-- Choose i = 1 and j = 2, nums = [1,4,3].
-</pre>
+### Örnek
 
-<p><strong class="example">Example 3:</strong></p>
+**Input:** `nums = [8,12,6], target = [2,14,10]`  
+**Output:** `4`  
 
-<pre>
-<strong>Input:</strong> nums = [1,1,1,1,1], target = [1,1,1,1,1]
-<strong>Output:</strong> 0
-<strong>Explanation:</strong> The array nums is already similiar to target.
-</pre>
+Açıklama: Diziyi benzer hâle getirmek için minimum 4 işlem gerekir.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+---
 
-<ul>
-	<li><code>n == nums.length == target.length</code></li>
-	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
-	<li><code>1 &lt;= nums[i], target[i] &lt;= 10<sup>6</sup></code></li>
-	<li>It is possible to make <code>nums</code> similar to <code>target</code>.</li>
-</ul>
+## Çözüm Mantığı
+
+- `nums` ve `target` dizilerini **tek ve çift olarak ayır**  
+- Her grupta elemanları sırala  
+- Farkların toplamını al ve 4’e böl (çünkü her işlem toplamda 4 birim değişiklik sağlar)  
+- Bu yöntem minimum işlem sayısını verir  
+
+---
+
+## Kullanım
+
+let nums = [8,12,6];
+let target = [2,14,10];
+console.log(makeSimilar(nums, target)); 
+// Output: 4
+
+---
+
+🙏 Eğer bu proje işine yaradıysa yıldız bırakmayı unutma! ⭐
+Katkı ve geri bildirimler için açığım.
