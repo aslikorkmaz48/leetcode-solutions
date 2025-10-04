@@ -1,47 +1,33 @@
-# [Minimum Sum After Replacing Zeros](https://leetcode.com/problems/minimum-sum-after-replacing-zeros/)  
+<h2><a href="https://leetcode.com/problems/minimum-equal-sum-of-two-arrays-after-replacing-zeros">Minimum Equal Sum of Two Arrays After Replacing Zeros</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given two arrays <code>nums1</code> and <code>nums2</code> consisting of positive integers.</p>
 
-## Dil
+<p>You have to replace <strong>all</strong> the <code>0</code>&#39;s in both arrays with <strong>strictly</strong> positive integers such that the sum of elements of both arrays becomes <strong>equal</strong>.</p>
 
-**JavaScript**
+<p>Return <em>the <strong>minimum</strong> equal sum you can obtain, or </em><code>-1</code><em> if it is impossible</em>.</p>
 
----
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-## Problem
+<pre>
+<strong>Input:</strong> nums1 = [3,2,0,1,0], nums2 = [6,5,0]
+<strong>Output:</strong> 12
+<strong>Explanation:</strong> We can replace 0&#39;s in the following way:
+- Replace the two 0&#39;s in nums1 with the values 2 and 4. The resulting array is nums1 = [3,2,2,1,4].
+- Replace the 0 in nums2 with the value 1. The resulting array is nums2 = [6,5,1].
+Both arrays have an equal sum of 12. It can be shown that it is the minimum sum we can obtain.
+</pre>
 
-Verilen iki tamsayı dizisi `nums1` ve `nums2`, içlerindeki **0 değerlerini pozitif tamsayılarla değiştirerek** her iki dizinin toplamını eşitleyin ve **minimum toplam değeri** bulun.  
+<p><strong class="example">Example 2:</strong></p>
 
-**Kurallar:**  
-- Sıfırlar pozitif tamsayılarla değiştirilebilir  
-- Diziler eşit toplamlı hâle getirilmeli  
-- Eğer mümkün değilse `-1` döndür  
+<pre>
+<strong>Input:</strong> nums1 = [2,0,2,0], nums2 = [1,4]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> It is impossible to make the sum of both arrays equal.
+</pre>
 
----
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-### Örnek
-
-**Input:** `nums1 = [1,0,2], nums2 = [2,0,1]`  
-**Output:** `4`  
-
-Açıklama: Sıfırlar uygun şekilde değiştirildiğinde her iki dizinin toplamı 4 olur.
-
----
-
-## Çözüm Mantığı
-
-- Her dizide sıfır ve toplam değerlerini hesapla  
-- Dizinin alabileceği en küçük toplam = mevcut toplam + sıfır sayısı  
-- Maksimum bu iki minimum toplamı M olarak belirle  
-- Eğer sıfır yoksa ve toplam M’ye eşit değilse çözüm yok → -1  
-- Aksi halde M minimum toplam sonucu olur  
-
----
-
-## Kullanım
-let nums1 = [1,0,2];
-let nums2 = [2,0,1];
-console.log(minSum(nums1, nums2)); 
-// Output:4
-
----
-🙏 Eğer bu proje işine yaradıysa yıldız bırakmayı unutma! ⭐
-Katkı ve geri bildirimler için açığım.
+<ul>
+	<li><code>1 &lt;= nums1.length, nums2.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 10<sup>6</sup></code></li>
+</ul>
