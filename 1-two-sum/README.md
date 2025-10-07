@@ -1,41 +1,60 @@
-<h2><a href="https://leetcode.com/problems/two-sum">Two Sum</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
+# ✅ LeetCode - İki Sayının Toplamı (Two Sum)
 
-<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>
+## 🔗 Soru Bağlantısı
 
-<p>You can return the answer in any order.</p>
+[LeetCode 1 - Two Sum](https://leetcode.com/problems/two-sum/)
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [2,7,11,15], target = 9
-<strong>Output:</strong> [0,1]
-<strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
-</pre>
+## 🧾 Soru Açıklaması
 
-<p><strong class="example">Example 2:</strong></p>
+Bir tamsayı dizisi `nums` ve bir hedef sayı `target` verilir. Dizideki iki farklı sayının toplamı `target` değerine eşit olmalıdır.
 
-<pre>
-<strong>Input:</strong> nums = [3,2,4], target = 6
-<strong>Output:</strong> [1,2]
-</pre>
+- Bu iki sayının indeksleri bulunup bir dizi olarak döndürülmelidir.
+- Aynı eleman iki kez kullanılamaz.
+- Problemin garantisi: En az bir çözüm mutlaka vardır.
 
-<p><strong class="example">Example 3:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> nums = [3,3], target = 6
-<strong>Output:</strong> [0,1]
-</pre>
+## 🧠 Kısıtlamalar
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+- Dizi uzunluğu: `2 <= nums.length <= 10,000`
+- Elemanlar: `-10^9 <= nums[i] <= 10^9`
+- Hedef sayı: `-10^9 <= target <= 10^9`
+- Sadece bir geçerli çözüm vardır.
 
-<ul>
-	<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
-	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
-	<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
-	<li><strong>Only one valid answer exists.</strong></li>
-</ul>
+---
 
-<p>&nbsp;</p>
-<strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code><font face="monospace">&nbsp;</font>time complexity?
+## 🔍 Örnekler
+
+- Girdi: `nums = [2, 7, 11, 15], target = 9`  
+  Çıktı: `[0, 1]`  
+  Açıklama: `nums[0] + nums[1] = 2 + 7 = 9`
+
+- Girdi: `nums = [3, 2, 4], target = 6`  
+  Çıktı: `[1, 2]`
+
+---
+
+## 💡 Çözüm Yaklaşımı
+
+- Her elemanı ve indeksini hızlıca bulmak için bir **hash map** (anahtar-değer yapısı) kullanılır.
+- Dizide ilerlerken, `target` - `nums[i]` değerinin önceden map’te olup olmadığı kontrol edilir.
+- Eğer varsa, o iki sayı toplamı hedefler ve indeksler döndürülür.
+- Yoksa, mevcut sayı ve indeksi map’e eklenir.
+- Bu sayede problemi `O(n)` zaman ve `O(n)` alan karmaşıklığı ile çözmek mümkün olur.
+
+---
+
+## ⏱ Performans
+
+- Zaman Karmaşıklığı: `O(n)`  
+- Alan Karmaşıklığı: `O(n)`
+
+---
+
+## 📌 Notlar
+
+- Hash map kullanımı, tamamlayıcı sayıyı hızlıca kontrol etmeyi sağlar.
+- İndekslerin sırası genellikle problem için önemli değildir.
+- Her zaman geçerli en erken bulunan çift çözüm olarak kabul edilir.
