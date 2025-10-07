@@ -1,47 +1,79 @@
-# [Length of String After Transformations](https://leetcode.com/problems/length-of-string-after-transformations/)  
+<h2><a href="https://leetcode.com/problems/total-characters-in-string-after-transformations-i">Total Characters in String After Transformations I</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given a string <code>s</code> and an integer <code>t</code>, representing the number of <strong>transformations</strong> to perform. In one <strong>transformation</strong>, every character in <code>s</code> is replaced according to the following rules:</p>
 
-## Dil
+<ul>
+	<li>If the character is <code>&#39;z&#39;</code>, replace it with the string <code>&quot;ab&quot;</code>.</li>
+	<li>Otherwise, replace it with the <strong>next</strong> character in the alphabet. For example, <code>&#39;a&#39;</code> is replaced with <code>&#39;b&#39;</code>, <code>&#39;b&#39;</code> is replaced with <code>&#39;c&#39;</code>, and so on.</li>
+</ul>
 
-**JavaScript**
+<p>Return the <strong>length</strong> of the resulting string after <strong>exactly</strong> <code>t</code> transformations.</p>
 
----
+<p>Since the answer may be very large, return it <strong>modulo</strong><!-- notionvc: eb142f2b-b818-4064-8be5-e5a36b07557a --> <code>10<sup>9</sup> + 7</code>.</p>
 
-## Problem
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-Verilen bir string `s` ve bir tamsayı `t`, **belirli dönüşümler sonrası string’in uzunluğunu** bulun.  
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;abcyy&quot;, t = 2</span></p>
 
-**Kurallar:**  
-- Her harf `a..y` bir sonraki harfe dönüşür  
-- `z` harfi `"ab"` olarak dönüşür  
-- Bu dönüşüm `t` kez uygulanır  
-- Sonuç çok büyük olabileceği için `10^9 + 7` ile mod al  
+<p><strong>Output:</strong> <span class="example-io">7</span></p>
 
----
+<p><strong>Explanation:</strong></p>
 
-### Örnek
+<ul>
+	<li><strong>First Transformation (t = 1)</strong>:
 
-**Input:** `s = "abc", t = 2`  
-**Output:** `3`  
+	<ul>
+		<li><code>&#39;a&#39;</code> becomes <code>&#39;b&#39;</code></li>
+		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
+		<li><code>&#39;c&#39;</code> becomes <code>&#39;d&#39;</code></li>
+		<li><code>&#39;y&#39;</code> becomes <code>&#39;z&#39;</code></li>
+		<li><code>&#39;y&#39;</code> becomes <code>&#39;z&#39;</code></li>
+		<li>String after the first transformation: <code>&quot;bcdzz&quot;</code></li>
+	</ul>
+	</li>
+	<li><strong>Second Transformation (t = 2)</strong>:
+	<ul>
+		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
+		<li><code>&#39;c&#39;</code> becomes <code>&#39;d&#39;</code></li>
+		<li><code>&#39;d&#39;</code> becomes <code>&#39;e&#39;</code></li>
+		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
+		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
+		<li>String after the second transformation: <code>&quot;cdeabab&quot;</code></li>
+	</ul>
+	</li>
+	<li><strong>Final Length of the string</strong>: The string is <code>&quot;cdeabab&quot;</code>, which has 7 characters.</li>
+</ul>
+</div>
 
-Açıklama: Her dönüşüm sonrası harfler değişir, sonunda toplam uzunluk hesaplanır.
+<p><strong class="example">Example 2:</strong></p>
 
----
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = &quot;azbk&quot;, t = 1</span></p>
 
-## Çözüm Mantığı
+<p><strong>Output:</strong> <span class="example-io">5</span></p>
 
-- Dinamik programlama (DP) kullanılır  
-- Sadece iki satır saklanır (rolling array)  
-- Her adımda harfler bir sonraki harfe veya `'z'` için `"ab"`’ye dönüşür  
-- Son adımda her karakterin katkısı toplanır ve mod alınır  
+<p><strong>Explanation:</strong></p>
 
----
+<ul>
+	<li><strong>First Transformation (t = 1)</strong>:
 
-## Kullanım
-let s = "abc";
-let t = 2;
-console.log(lengthAfterTransformations(s, t)); 
-// Output: 3
+	<ul>
+		<li><code>&#39;a&#39;</code> becomes <code>&#39;b&#39;</code></li>
+		<li><code>&#39;z&#39;</code> becomes <code>&quot;ab&quot;</code></li>
+		<li><code>&#39;b&#39;</code> becomes <code>&#39;c&#39;</code></li>
+		<li><code>&#39;k&#39;</code> becomes <code>&#39;l&#39;</code></li>
+		<li>String after the first transformation: <code>&quot;babcl&quot;</code></li>
+	</ul>
+	</li>
+	<li><strong>Final Length of the string</strong>: The string is <code>&quot;babcl&quot;</code>, which has 5 characters.</li>
+</ul>
+</div>
 
----
-🙏 Eğer bu proje işine yaradıysa yıldız bırakmayı unutma! ⭐
-Katkı ve geri bildirimler için açığım.
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>s</code> consists only of lowercase English letters.</li>
+	<li><code>1 &lt;= t &lt;= 10<sup>5</sup></code></li>
+</ul>
