@@ -1,35 +1,33 @@
-<h2><a href="https://leetcode.com/problems/add-two-numbers">Add Two Numbers</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong>, and each of their nodes contains a single digit. Add the two numbers and return the sum&nbsp;as a linked list.</p>
+# İki Sayının Toplamı - Add Two Numbers
 
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+## Problem Açıklaması
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2020/10/02/addtwonumber1.jpg" style="width: 483px; height: 342px;" />
-<pre>
-<strong>Input:</strong> l1 = [2,4,3], l2 = [5,6,4]
-<strong>Output:</strong> [7,0,8]
-<strong>Explanation:</strong> 342 + 465 = 807.
-</pre>
+İki adet ters sıralı bağlı liste veriliyor. Her bir düğüm, bir sayının basamağını temsil ediyor. Bu iki sayıyı toplayıp, sonucu yine ters sıralı bağlı liste olarak döndürmelisiniz.
 
-<p><strong class="example">Example 2:</strong></p>
+## Girdi
 
-<pre>
-<strong>Input:</strong> l1 = [0], l2 = [0]
-<strong>Output:</strong> [0]
-</pre>
+- İki bağlı liste (`l1` ve `l2`).
+- Her düğüm bir rakam içerir (0-9).
+- Sayılar ters sıralıdır; listenin başı birler basamağıdır.
 
-<p><strong class="example">Example 3:</strong></p>
+## Çıktı
 
-<pre>
-<strong>Input:</strong> l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
-<strong>Output:</strong> [8,9,9,9,0,0,0,1]
-</pre>
+- İki sayının toplamını temsil eden ters sıralı bağlı liste.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## Çözüm Yaklaşımı
 
-<ul>
-	<li>The number of nodes in each linked list is in the range <code>[1, 100]</code>.</li>
-	<li><code>0 &lt;= Node.val &lt;= 9</code></li>
-	<li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
-</ul>
+- İki listeyi eş zamanlı baştan sona dolaşarak basamak basamak toplayın.
+- Toplamı hesaplayıp elde varsa sonraki toplama aktarın.
+- Bir listenin basamağı yoksa, 0 olarak alın.
+- Son elde kalan varsa son düğüm olarak ekleyin.
+- Sonuç yeni bağlı liste olarak döndürülür.
+
+## Performans
+
+- Zaman karmaşıklığı: O(max(m, n)) (m ve n listelerin uzunlukları)
+- Alan karmaşıklığı: O(max(m, n)) (sonuç listesi için)
+
+## Notlar
+
+- Sahte baş düğüm (dummy head) kullanmak liste oluşturmayı kolaylaştırır.
+- Elde işlemi toplama sırasında dikkatlice yönetilmelidir.
