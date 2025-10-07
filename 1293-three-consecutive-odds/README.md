@@ -1,25 +1,55 @@
-<h2><a href="https://leetcode.com/problems/three-consecutive-odds">Three Consecutive Odds</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr>Given an integer array <code>arr</code>, return <code>true</code>&nbsp;if there are three consecutive odd numbers in the array. Otherwise, return&nbsp;<code>false</code>.
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+# ✅ LeetCode - Üç Ardışık Tek Sayı (Three Consecutive Odds)
 
-<pre>
-<strong>Input:</strong> arr = [2,6,4,1]
-<strong>Output:</strong> false
-<b>Explanation:</b> There are no three consecutive odds.
-</pre>
+## 🔗 Soru Bağlantısı
 
-<p><strong class="example">Example 2:</strong></p>
+[LeetCode 1550 - Three Consecutive Odds](https://leetcode.com/problems/three-consecutive-odds/)
 
-<pre>
-<strong>Input:</strong> arr = [1,2,34,3,4,5,7,23,12]
-<strong>Output:</strong> true
-<b>Explanation:</b> [5,7,23] are three consecutive odds.
-</pre>
+---
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## 🧾 Soru Açıklaması
 
-<ul>
-	<li><code>1 &lt;= arr.length &lt;= 1000</code></li>
-	<li><code>1 &lt;= arr[i] &lt;= 1000</code></li>
-</ul>
+Bir tamsayı dizisi `arr` veriliyor. Dizide art arda **üç tane tek sayı** olup olmadığını kontrol edin.
+
+- Eğer dizide ardışık üç tek sayı varsa, sonuç `true` olmalıdır.
+- Yoksa, sonuç `false` döndürülmelidir.
+
+---
+
+## 🧠 Kısıtlamalar
+
+- Dizi uzunluğu: `1 <= arr.length <= 1000`
+- Eleman değerleri: `1 <= arr[i] <= 1000`
+
+---
+
+## 🔍 Örnekler
+
+- `arr = [2, 6, 4, 1]` → `false`  
+  (Art arda üç tek sayı yok.)
+
+- `arr = [1, 2, 34, 3, 4, 5, 7, 23, 12]` → `true`  
+  (Art arda gelen üç tek sayı: [5, 7, 23])
+
+---
+
+## 💡 Çözüm Yaklaşımı
+
+- Dizide ardışık olarak tek sayıların sayısını sayan bir sayaç kullanılır.
+- Eğer bir sayı tekse sayaç artırılır, çiftse sayaç sıfırlanır.
+- Sayaç değeri 3 olursa, art arda üç tek sayı bulunmuş demektir ve `true` döndürülür.
+- Dizide ilerledikçe sayaç takip edilir, sonunda eğer sayaç 3'e ulaşmamışsa `false` sonucu döndürülür.
+
+---
+
+## ⏱ Performans
+
+- Zaman karmaşıklığı: `O(n)` (Dizi bir kere taranır)
+- Alan karmaşıklığı: `O(1)` (Sabit ek alan kullanılır)
+
+---
+
+## 📌 Notlar
+
+- Problem tek geçişle ve minimum ekstra bellek kullanarak çözülebilir.
+- Dizi sadece pozitif tam sayılardan oluşur.
+- Bu problem özellikle ardışık koşulları takip etmeye yönelik temel algoritma pratikleri için idealdir.
