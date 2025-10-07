@@ -1,37 +1,52 @@
-<h2><a href="https://leetcode.com/problems/fraction-to-recurring-decimal">Fraction to Recurring Decimal</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given two integers representing the <code>numerator</code> and <code>denominator</code> of a fraction, return <em>the fraction in string format</em>.</p>
+# ✅ LeetCode - Çift Basamaklı Sayılar (Find Numbers with Even Number of Digits)
 
-<p>If the fractional part is repeating, enclose the repeating part in parentheses.</p>
+## 🔗 Soru Bağlantısı
 
-<p>If multiple answers are possible, return <strong>any of them</strong>.</p>
+[LeetCode 1295 - Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/)
 
-<p>It is <strong>guaranteed</strong> that the length of the answer string is less than <code>10<sup>4</sup></code> for all the given inputs.</p>
+---
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+## 🧾 Soru Açıklaması
 
-<pre>
-<strong>Input:</strong> numerator = 1, denominator = 2
-<strong>Output:</strong> &quot;0.5&quot;
-</pre>
+Bir tamsayı dizisi `nums` veriliyor. Bu dizideki **basamak sayısı çift olan** sayıların adedini bulun.
 
-<p><strong class="example">Example 2:</strong></p>
+---
 
-<pre>
-<strong>Input:</strong> numerator = 2, denominator = 1
-<strong>Output:</strong> &quot;2&quot;
-</pre>
+## 🧠 Kısıtlamalar
 
-<p><strong class="example">Example 3:</strong></p>
+- Dizi uzunluğu: `1 <= nums.length <= 500`
+- Elemanlar: `1 <= nums[i] <= 10^5`
 
-<pre>
-<strong>Input:</strong> numerator = 4, denominator = 333
-<strong>Output:</strong> &quot;0.(012)&quot;
-</pre>
+---
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## 🔍 Örnekler
 
-<ul>
-	<li><code>-2<sup>31</sup> &lt;=&nbsp;numerator, denominator &lt;= 2<sup>31</sup> - 1</code></li>
-	<li><code>denominator != 0</code></li>
-</ul>
+- Girdi: `nums = [12, 345, 2, 6, 7896]`  
+  Çıktı: `2`  
+  Açıklama: `12` ve `7896` çift basamak sayısına sahip (sırasıyla 2 ve 4 basamak).
+
+- Girdi: `nums = [555, 901, 482, 1771]`  
+  Çıktı: `1`
+
+---
+
+## 💡 Çözüm Yaklaşımı
+
+- Dizideki her sayının basamak sayısını hesaplayın.
+- Basamak sayısı çift olan sayıların sayısını artırın.
+- Basamak sayısını hesaplamak için sayıyı 10’a bölerek basamakları sayabilirsiniz.
+- Sonuç olarak, çift basamak sayısına sahip sayıların toplam adedini döndürün.
+
+---
+
+## ⏱ Performans
+
+- Zaman karmaşıklığı: `O(n * k)`, burada `n` dizi uzunluğu, `k` ise basamak sayısıdır (genellikle sabit ve küçük).
+- Alan karmaşıklığı: `O(1)`
+
+---
+
+## 📌 Notlar
+
+- Basamak sayısını hesaplamak için string dönüşümü de kullanılabilir ancak matematiksel bölme işlemi daha performanslıdır.
+- Basamak sayısı çift olan tüm sayıları saymak temel bir döngü ve koşul kontrolü ile kolayca yapılabilir.
