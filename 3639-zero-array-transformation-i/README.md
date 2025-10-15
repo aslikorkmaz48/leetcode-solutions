@@ -1,70 +1,26 @@
-<h2><a href="https://leetcode.com/problems/zero-array-transformation-i">Zero Array Transformation I</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an integer array <code>nums</code> of length <code>n</code> and a 2D array <code>queries</code>, where <code>queries[i] = [l<sub>i</sub>, r<sub>i</sub>]</code>.</p>
+# Zero Array Transformation
 
-<p>For each <code>queries[i]</code>:</p>
+Bu proje, bir tamsayı dizisini verilen sorgular doğrultusunda tamamen sıfırlayıp sıfırlayamayacağımızı kontrol eder. Her sorgu `[li, ri]` aralığında seçilen indekslerin değerlerini 1 azaltır ve amaç diziyi **Zero Array** haline getirmektir.
 
-<ul>
-	<li>Select a <span data-keyword="subset">subset</span> of indices within the range <code>[l<sub>i</sub>, r<sub>i</sub>]</code> in <code>nums</code>.</li>
-	<li>Decrement the values at the selected indices by 1.</li>
-</ul>
+---
 
-<p>A <strong>Zero Array</strong> is an array where all elements are equal to 0.</p>
+## Kullanım
 
-<p>Return <code>true</code> if it is <em>possible</em> to transform <code>nums</code> into a <strong>Zero Array </strong>after processing all the queries sequentially, otherwise return <code>false</code>.</p>
+Solution solution = new Solution();
+int[] nums = {1,0,1};
+int[][] queries = {{0,2}};
+boolean result = solution.isZeroArray(nums, queries);
+System.out.println(result); // true
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Özellikler
+Büyük veri setleri ile çalışabilir.
+Fark dizisi veya segment tree teknikleri ile optimize edilebilir.
+Sorgular sırasıyla uygulanır ve negatif değer oluşursa false döndürülür.
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [1,0,1], queries = [[0,2]]</span></p>
+Kısıtlar
+1 ≤ nums.length ≤ 10^5
+0 ≤ nums[i] ≤ 10^5
+1 ≤ queries.length ≤ 10^5
+0 ≤ li ≤ ri < nums.length
 
-<p><strong>Output:</strong> <span class="example-io">true</span></p>
 
-<p><strong>Explanation:</strong></p>
-
-<ul>
-	<li><strong>For i = 0:</strong>
-
-	<ul>
-		<li>Select the subset of indices as <code>[0, 2]</code> and decrement the values at these indices by 1.</li>
-		<li>The array will become <code>[0, 0, 0]</code>, which is a Zero Array.</li>
-	</ul>
-	</li>
-</ul>
-</div>
-
-<p><strong class="example">Example 2:</strong></p>
-
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">nums = [4,3,2,1], queries = [[1,3],[0,2]]</span></p>
-
-<p><strong>Output:</strong> <span class="example-io">false</span></p>
-
-<p><strong>Explanation:</strong></p>
-
-<ul>
-	<li><strong>For i = 0:</strong>
-
-	<ul>
-		<li>Select the subset of indices as <code>[1, 2, 3]</code> and decrement the values at these indices by 1.</li>
-		<li>The array will become <code>[4, 2, 1, 0]</code>.</li>
-	</ul>
-	</li>
-	<li><strong>For i = 1:</strong>
-	<ul>
-		<li>Select the subset of indices as <code>[0, 1, 2]</code> and decrement the values at these indices by 1.</li>
-		<li>The array will become <code>[3, 1, 0, 0]</code>, which is not a Zero Array.</li>
-	</ul>
-	</li>
-</ul>
-</div>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
-	<li><code>1 &lt;= queries.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>queries[i].length == 2</code></li>
-	<li><code>0 &lt;= l<sub>i</sub> &lt;= r<sub>i</sub> &lt; nums.length</code></li>
-</ul>
