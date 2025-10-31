@@ -1,50 +1,39 @@
-<h2><a href="https://leetcode.com/problems/find-the-lexicographically-largest-string-from-the-box-i">Find the Lexicographically Largest String From the Box I</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given a string <code>word</code>, and an integer <code>numFriends</code>.</p>
+# LeetCode PHP Çözümleri 🖥️
 
-<p>Alice is organizing a game for her <code>numFriends</code> friends. There are multiple rounds in the game, where in each round:</p>
+Bu repo, LeetCode üzerinde çözdüğüm algoritma ve veri yapısı sorularını içerir.  
+Projelerimi **PHP** kullanarak çözdüm ve özellikle **problem çözme yeteneğimi geliştirmeyi** hedefledim.  
 
-<ul>
-	<li><code>word</code> is split into <code>numFriends</code> <strong>non-empty</strong> strings, such that no previous round has had the <strong>exact</strong> same split.</li>
-	<li>All the split words are put into a box.</li>
-</ul>
+Sorular **easy**, **medium** ve **hard** seviyelerine göre kategorize edilmiştir.  
 
-<p>Find the <span data-keyword="lexicographically-smaller-string">lexicographically largest</span> string from the box after all the rounds are finished.</p>
+---
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+## 🌟 Öne Çıkan Problem: `answerString`
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">word = &quot;dbca&quot;, numFriends = 2</span></p>
+### Problem
 
-<p><strong>Output:</strong> <span class="example-io">&quot;dbc&quot;</span></p>
+Alice, arkadaşlarıyla bir oyun oynuyor.  
+Verilen bir kelime (`word`) ve arkadaş sayısı (`numFriends`) ile:  
 
-<p><strong>Explanation:</strong>&nbsp;</p>
+- Kelimeyi `numFriends` kadar parçaya böl  
+- Tüm parçalardan oluşan stringleri bir kutuya koy  
+- Kutudaki en büyük leksikografik stringi bulun  
 
-<p>All possible splits are:</p>
+### Örnekler
 
-<ul>
-	<li><code>&quot;d&quot;</code> and <code>&quot;bca&quot;</code>.</li>
-	<li><code>&quot;db&quot;</code> and <code>&quot;ca&quot;</code>.</li>
-	<li><code>&quot;dbc&quot;</code> and <code>&quot;a&quot;</code>.</li>
-</ul>
-</div>
+$sol = new Solution();
+echo $sol->answerString("dbca", 2); // "dbc"
+echo $sol->answerString("gggg", 4); // "g"
+echo $sol->answerString("gh", 1);   // "gh"
+## 🚀 Hedefler ve Öğrenim
 
-<p><strong class="example">Example 2:</strong></p>
+- PHP ile algoritma ve veri yapıları becerilerimi geliştirmek
+- Farklı problem çözme tekniklerini öğrenmek
+- LeetCode sorularını çözerek mülakat hazırlığı yapmak
+- Kodun okunabilirliğini ve performansını artırmak
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">word = &quot;gggg&quot;, numFriends = 4</span></p>
+---
 
-<p><strong>Output:</strong> <span class="example-io">&quot;g&quot;</span></p>
+## 📌 Profilim
 
-<p><strong>Explanation:</strong>&nbsp;</p>
-
-<p>The only possible split is: <code>&quot;g&quot;</code>, <code>&quot;g&quot;</code>, <code>&quot;g&quot;</code>, and <code>&quot;g&quot;</code>.</p>
-</div>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= word.length &lt;= 5&nbsp;* 10<sup>3</sup></code></li>
-	<li><code>word</code> consists only of lowercase English letters.</li>
-	<li><code>1 &lt;= numFriends &lt;= word.length</code></li>
-</ul>
+- GitHub: [aslikorkmaz48](https://github.com/aslikorkmaz48)
+- LinkedIn: [Aslı Korkmaz](https://www.linkedin.com/in/asl%C4%B1korkmaz/)
