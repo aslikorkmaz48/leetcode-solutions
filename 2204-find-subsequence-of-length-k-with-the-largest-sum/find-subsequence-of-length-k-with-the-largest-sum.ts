@@ -1,15 +1,14 @@
 function maxSubsequence(nums: number[], k: number): number[] {
-    // Elemanları (değer + index) olarak tut
-    const arr = nums.map((num, i) => ({ num, i }));
+    // 1. Elemanları değer ve indeks ile sakla
+    let arr = nums.map((num, idx) => ({ value: num, index: idx }));
 
-    // En büyük k elemanı seç (num’a göre sıralayıp)
-    arr.sort((a, b) => b.num - a.num);
+    // 2. Değerlerine göre büyükten küçüğe sırala ve ilk k'yı al
+    arr.sort((a, b) => b.value - a.value);
+    let topK = arr.slice(0, k);
 
-    const topK = arr.slice(0, k);
+    // 3. Orijinal indekse göre sırala
+    topK.sort((a, b) => a.index - b.index);
 
-    // Alt dizi olduğu için tekrar index’e göre sırala
-    topK.sort((a, b) => a.i - b.i);
-
-    // Sadece değerleri döndür
-    return topK.map(x => x.num);
+    // 4. Sadece değerleri döndür
+    return topK.map(item => item.value);
 }
